@@ -1,1 +1,9 @@
-<a>List</a>
+{% extends "blog/index.html.twig" %}
+{% block content%}
+    <ul>
+        {% for category in blogCategories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

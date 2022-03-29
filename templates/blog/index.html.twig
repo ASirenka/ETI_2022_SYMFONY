@@ -1,16 +1,22 @@
 <html>
 <head>
-    <title>Blog title</title>
+    {% block tittle %}
+        <title>Blog Title</title>
+    {% endblock %}
 </head>
-
 <body>
+{% block body %}
+    <div>
+        {% block links %}
+            <a href="{{ url('index')}}" title="Home">Homepage</a>
+            <a href="{{ url('list')}}" title="List">Article List</a>
+            <a href="{{ url('login')}}" title="Login">Login</a>
+            <a href="{{ url('about')}}" title="About">About</a>
+        {% endblock %}
+    </div>
+    {% block content %}
 
-<div>
-    <a href="/blog/index" title="Lista">HomePage</a>
-    <a href="/blog/list" title="Lista">Article list</a>
-    <a href="/blog/login" title="Lista">Login</a>
-    <a href="/blog/about" title="Lista">About me</a>
-</div>
-
+    {% endblock %}
+{% endblock %}
 </body>
 </html>

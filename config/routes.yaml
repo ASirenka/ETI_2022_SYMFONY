@@ -1,6 +1,32 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
-my_number:
-  path: /moja/Liczba
-  controller: App\Controller\LuckyController::number
+
+controllers:
+  resource: ../src/Controller/
+  type: annotation
+
+kernel:
+  resource: ../src/Kernel.php
+  type: annotation
+index:
+  path: /blog/index
+  controller: App\Controller\BlogController::index
+about:
+  path: /blog/about
+  controller: App\Controller\BlogController::about
+login:
+  path: /blog/login
+  controller: App\Controller\BlogController::login
+list:
+  path: /blog/list
+  controller: App\Controller\BlogController::list
+view:
+  path: /blog/view/{id}
+  controller: App\Controller\BlogController::view
+newcat:
+  path: /blog/newcat
+  controller: App\Controller\BlogController::newcat
+newpost:
+  path: /blog/newpost
+  controller: App\Controller\BlogController::newpost
+showpost:
+  path: /blog/showpost/{id}
+  controller: App\Controller\BlogController::showpost

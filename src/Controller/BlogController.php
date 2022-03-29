@@ -3,9 +3,12 @@
 // src/Controller/LuckyController.php
 namespace App\Controller;
 
+use App\Entity\BlogCategory;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends AbstractController
 {
@@ -25,9 +28,14 @@ class BlogController extends AbstractController
         return $this->render('blog/login.html.twig', []);
     }
 
-    public function list(): Response
+    public function list(ManagerRegistry $doctrine): Response
     {
-        return $this->render('blog/list.html.twig', []);
+        $repository = $doctrine->getRepository(BlogCategory::class);
+        $blogCategories = $repository->findAll();
+
+        return $this->render('blog/list.html.twig',[
+            "blogCategories"=>[]//$blogCategories,
+        ]);
     }
 
     public function about(): Response
