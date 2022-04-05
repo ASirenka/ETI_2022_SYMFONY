@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\BlogCategory;
+use App\Entity\BlogCategoryy;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method BlogCategory|null find($id, $lockMode = null, $lockVersion = null)
- * @method BlogCategory|null findOneBy(array $criteria, array $orderBy = null)
- * @method BlogCategory[]    findAll()
- * @method BlogCategory[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method BlogCategoryy|null find($id, $lockMode = null, $lockVersion = null)
+ * @method BlogCategoryy|null findOneBy(array $criteria, array $orderBy = null)
+ * @method BlogCategoryy[]    findAll()
+ * @method BlogCategoryy[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BlogCategoryRepository extends ServiceEntityRepository
+class BlogCategoryyRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, BlogCategory::class);
+        parent::__construct($registry, BlogCategoryy::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(BlogCategory $entity, bool $flush = true): void
+    public function add(BlogCategoryy $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class BlogCategoryRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(BlogCategory $entity, bool $flush = true): void
+    public function remove(BlogCategoryy $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,7 +46,7 @@ class BlogCategoryRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return BlogCategory[] Returns an array of BlogCategory objects
+    //  * @return BlogCategoryy[] Returns an array of BlogCategoryy objects
     //  */
     /*
     public function findByExampleField($value)
@@ -63,7 +63,7 @@ class BlogCategoryRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?BlogCategory
+    public function findOneBySomeField($value): ?BlogCategoryy
     {
         return $this->createQueryBuilder('b')
             ->andWhere('b.exampleField = :val')

@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\BlogArticle;
+use App\Entity\BlogArticlee;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method BlogArticle|null find($id, $lockMode = null, $lockVersion = null)
- * @method BlogArticle|null findOneBy(array $criteria, array $orderBy = null)
- * @method BlogArticle[]    findAll()
- * @method BlogArticle[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method BlogArticlee|null find($id, $lockMode = null, $lockVersion = null)
+ * @method BlogArticlee|null findOneBy(array $criteria, array $orderBy = null)
+ * @method BlogArticlee[]    findAll()
+ * @method BlogArticlee[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BlogArticleRepository extends ServiceEntityRepository
+class BlogArticleeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, BlogArticle::class);
+        parent::__construct($registry, BlogArticlee::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(BlogArticle $entity, bool $flush = true): void
+    public function add(BlogArticlee $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class BlogArticleRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(BlogArticle $entity, bool $flush = true): void
+    public function remove(BlogArticlee $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,7 +46,7 @@ class BlogArticleRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return BlogArticle[] Returns an array of BlogArticle objects
+    //  * @return BlogArticlee[] Returns an array of BlogArticlee objects
     //  */
     /*
     public function findByExampleField($value)
@@ -63,7 +63,7 @@ class BlogArticleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?BlogArticle
+    public function findOneBySomeField($value): ?BlogArticlee
     {
         return $this->createQueryBuilder('b')
             ->andWhere('b.exampleField = :val')
